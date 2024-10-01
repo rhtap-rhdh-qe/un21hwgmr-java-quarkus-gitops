@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: un21hwgmr-java-quarkus-gitops
+  description: This is GitOps manifest for un21hwgmr-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: un21hwgmr-java-quarkus
+    janus-idp.io/tekton: un21hwgmr-java-quarkus
+    backstage.io/kubernetes-id: un21hwgmr-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:un21hwgmr-java-quarkus
